@@ -16,11 +16,11 @@ class Person {
   }
 }
 
-const personOne = new Person("Neeraj", 22);
-console.log(personOne);
+// const personOne = new Person("Neeraj", 22);
+// console.log(personOne);
 
 // Task 2
-personOne.update(21);
+// personOne.update(21);
 
 // Activity 2 Class inheritance
 
@@ -39,13 +39,13 @@ class Student extends Person {
   }
 }
 
-const studentOne = new Student(20, "Rahul" , 100)
+const studentOne = new Student(20, "Rahul", 100);
 
-console.log(studentOne.getStudentId);
-studentOne.getStudentId()
+// console.log(studentOne.getStudentId);
+// studentOne.getStudentId();
 
 // Task 4
-studentOne.greet()
+// studentOne.greet();
 
 // Activity 3  static method we can declare it on class it self . not on the instance of class
 
@@ -58,7 +58,7 @@ class PersonTwo {
   }
 }
 
-PersonTwo.greet("Neeraj");
+// PersonTwo.greet("Neeraj");
 // Task 6
 
 class Students {
@@ -72,8 +72,32 @@ class Students {
   }
 }
 
-const studentFirst = new Students("surya", "ratanjee modern school");
+// const studentFirst = new Students("surya", "ratanjee modern school");
+// const studentSecond = new Students("rahul", "ratanjee modern school");
+// const studentThird = new Students("neeraj", "ratanjee modern school");
 
-const studentSecond = new Students("rahul", "ratanjee modern school");
+// Activity 4 Getter and Setter
+// Task 7
+class PersonClass {
+  constructor(firstName, lastName) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+  }
+  get fullName () {
+    return (`Fullname is ${this.firstName} and ${this.lastName}`);
+  }
+  set NewfullName(name) {
+    const [firstname, lastname] = name.split(" ");
+    this.firstName = firstname;
+    this.lastName = lastname;
+  }
 
-const studentThird = new Students("neeraj", "ratanjee modern school");
+}
+
+const personClassOne = new PersonClass("Neeraj" , "Bhatt")
+
+console.log(personClassOne.fullName);
+
+// Task 8
+personClassOne.NewfullName = "Sumit bhati"
+console.log(personClassOne.fullName);
